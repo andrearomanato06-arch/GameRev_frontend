@@ -1,12 +1,6 @@
 /* Reset universale */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Evita che il padding aumenti la larghezza degli elementi */
+  box-sizing: border-box;
 }
 
-#main {
-  width: 100%;
-  height: 100%;
-  background-color: #000; /* Opzionale: imposta il nero come sfondo globale */
-}
+
