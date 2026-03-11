@@ -45,20 +45,18 @@
 
 
 .account-button{
-  margin: 20px 50px 10px 40px;
-  border: 1px solid blue;
-  height: 40px;
-  width: 40px;
+  margin: 5px 100px 0px 200px;
+  width: 50px;
+  height: 50px;
 }
 
 
 .game-rev-logo{
-  margin: 0px 50px 40px 80px;
-}
-
-.game-rev-logo img{
-  height: 30px;
+  margin: 5px 0px 25px 100px;
+  height: 40px;
   width: 150px;
 }
+
+
 
 
