@@ -1,62 +1,138 @@
-#navbar{
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar{
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 0px;
-
-  background-color: #1A1A1A;
-  color: #FFFFFF;
-
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
-  height: 40px;
-  width: 100%;
-
-  padding-top: 4em;
-
-  margin-bottom: 4px;
-  overflow: hidden;
-  border-bottom: 4px solid #39d355;
-}
-
-.nav-button{
-  text-align: center;
-  color: #FFFFFF;
-  text-decoration: none;
-  background-color: #2A2A2A;
-  padding: 0px 20px;
+  justify-content: center;
   height: 80px;
-  width: 80px;
-  transition: all 0.5s ease;
-  transform: translateY(40px);
+  width: 100%;
+  overflow: hidden;
+  z-index: 888;
+  background-color: #1A1A1A;
+  border-bottom: 5px solid #39d355;
 }
 
-.nav-button:hover{
-  color: #000000;
-  font-weight:bolder;
+.navbar-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 2rem;
+  max-width: 1600px;
+}
+
+.game-rev-logo{
+  height: 40px;
+  width: auto;
+}
+
+.navbar-menu{
+  display: flex;
+  list-style: none;
+  height: 100%;
+}
+
+.navbar-menu li{
+  z-index: 999;
+}
+
+.navbar-menu li a{
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: 1.2rem;
+  font-family:Arial, Helvetica, sans-serif;
+  padding: 3px 20px;
+  white-space: nowrap;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  height: 60px;
+  transform: translateY(8px);
+  transition: all 0.5s ease;
+  background-color: #2A2A2A;
+}
+
+.navbar-menu li a:hover{
   background-color: #39d355;
+  color: black;
   transform: translateY(0px);
 }
 
-.nav-right{
-  display: flex;
-  justify-content: right;
+.account-button img{
+  align-items: center;
+  height: 35px;
+  width: 35px;
+  margin-bottom: 15px;
 }
 
-
-.account-button{
-  margin: 5px 100px 0px 200px;
-  width: 50px;
-  height: 50px;
+.navbar-toggle{
+  display: none;
+  background: transparent;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
 }
 
-
-.game-rev-logo{
-  margin: 5px 0px 25px 100px;
-  height: 40px;
-  width: 150px;
+.bar{
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px auto;
+  background-color: #39d355;
+  transition: all 0.3s ease-in-out;
 }
 
+@media(max-width: 880px){
 
+  *{
+    background-color: #1A1A1A;
+  }
 
+  .navbar{
+    overflow: visible;
+  }
 
+  .navbar-menu{
+    border-left: 5px solid #39d355;
+  }
+
+  .navbar-container .navbar-menu{
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.7rem;
+    position: absolute;
+    height: 100vh;
+    width: 250px;
+    top: 0;
+    right: 0;
+    padding: 5rem 1.5rem;
+  }
+
+  .navbar-toggle{
+    display: block;
+    z-index: 999;
+  }
+
+  .navbar-container .navbar-menu.active{
+    display: block;
+  }
+
+  .navbar-toggle.active .bar:nth-child(1){
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar-toggle.active .bar:nth-child(2){
+    opacity: 0;
+  }
+
+  .navbar-toggle.active .bar:nth-child(3){
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+}

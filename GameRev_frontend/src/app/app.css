@@ -1,6 +1,4 @@
-/* Reset universale */
-* {
-  box-sizing: border-box;
+#main {
+  margin: 0;
+  padding: 0;
 }
-
-

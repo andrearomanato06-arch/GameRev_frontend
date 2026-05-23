@@ -1,17 +1,33 @@
-<nav id="navbar">
+<nav class="navbar">
+  <div class="navbar-container" [class.active] = "isMenuOpen" >
 
-    <div>
-      <a routerLink=""><img src="GameRevLogoBlkBg.png" alt="GameRev logo" class="game-rev-logo"></a>
-    </div>
+    <img src="GameRevLogoBlkBg.png" alt="GameRev logo" class="game-rev-logo">
 
-    <div class="nav-right">
-    <a class="nav-button" routerLink=""><p>Login</p></a>
-    <a class="nav-button" routerLink=""><p>Games</p></a>
-    <a class="nav-button" routerLink=""><p>New</p></a>
-    <a class="nav-button" routerLink=""><p>Most Liked</p></a>
+    <!--menu a barre-->
+    <button class="navbar-toggle" (click)="toggleMenu()" [class.active]="isMenuOpen">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
 
-
-
-    <a routerLink="" ><img src="UserIcon.png" alt="Account" class="account-button"></a>
-    </div>
+    <!--navbar tabs-->
+    <ul
+      class="navbar-menu"
+      [class.active] = "isMenuOpen"
+    >
+      @if(true){ <!--!Aggiungere controllo se utente è loggato o no-->
+        <li><a routerLink="">Login</a></li>
+      }
+      <li><a routerLink="">Games</a></li>
+      <li><a routerLink="">New</a></li>
+      <li><a routerLink="">Most liked</a></li>
+      @if(!isMenuOpen){
+        <li class="account-button">
+          <a routerLink="" style="background-color: #1A1A1A;"><img src="UserIcon.png" alt="Account"></a>
+        </li>
+      }@else{
+        <li><a routerLink="">Account</a></li>
+      }
+      </ul>
+  </div>
 </nav>
