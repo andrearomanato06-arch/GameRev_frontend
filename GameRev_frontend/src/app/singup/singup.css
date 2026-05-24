@@ -1,0 +1,81 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.body{
+  height: 950px;
+  background: linear-gradient(to bottom, #000000, #39d255);
+}
+
+.singup-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 100px auto;
+  height: 850px;
+  width: 600px;
+  max-width: 90%;
+  padding-left: auto;
+  padding-right: auto;
+  background-color:#1A1A1A;
+  border: 1px solid #39d255;
+}
+
+.account-image{
+  margin-top: 50px;
+  width: 150px;
+  height: 150px;
+}
+
+.logo{
+  width: 250px;
+  height: 75px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+}
+
+.singup-form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-label{
+  color: #39d255;
+  margin-right: auto;
+}
+
+.input-field{
+  width: 300px;
+  height: 35px;
+  margin: 5px auto;
+  padding: 10px 10px;
+  background-color: #D9D9D9;
+}
+
+.input-field:focus{
+  outline: none;
+}
+
+.show-password-ckbx{
+  display: flex;
+  color: #39d255;
+  margin-right: auto;
+}
+
+.show-password-ckbx label{
+  margin-left: 5px;
+  text-decoration: underline;
+}
+
+.sbt-button{
+  margin-top: 100px;
+  width: 100px;
+  height: 35px;
+  border: none;
+  background-color: #39d255;
+  font-size: medium;
+  font-weight: bolder;
+}
