@@ -1,3 +1,4 @@
+import { NavigationService } from './../services/navigation-service';
 import { Component } from '@angular/core';
 
 @Component({
