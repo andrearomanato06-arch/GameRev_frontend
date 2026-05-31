@@ -5,12 +5,12 @@
 
     <img src="GameRevLogoBlkBg.png" alt="GameRev logo" class="logo">
 
-    <form class="login-form" id="login-form">
+    <form class="login-form" id="login-form" (ngSubmit)="login()">
       <label for="email-field" class="input-label">Email</label>
-      <input type="text" class="input-field" id="email-field" name="email" placeholder="Email">
+      <input type="text" class="input-field" id="email-field" name="email" placeholder="Email" [(ngModel)]="email" required>
 
       <label for="password-field" class="input-label">Password</label>
-      <input type="password" class="input-field" id="password-field" name="password" placeholder="Password">
+      <input type="password" class="input-field" id="password-field" name="password" placeholder="Password" [(ngModel)]="password" required>
 
       <div class="show-password-ckbx">
         <input type="checkbox" id="show-password" (change)="showPassword()">

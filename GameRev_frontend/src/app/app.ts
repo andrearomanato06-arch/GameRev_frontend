@@ -2,13 +2,14 @@ import { Component, inject, signal, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, Router, NavigationEnd } from '@angular/router';
 import { Navbar } from './navbar/navbar';
 import { Login } from './login/login';
-import { Singup } from './singup/singup';
+import { Signup } from './signup/signup';
 import { NavigationService } from './services/navigation-service';
-import { every, filter, Subscription } from 'rxjs';
+import { filter } from 'rxjs';
+import { Notification } from './notification/notification';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, Navbar, Login, Singup],
+  imports: [RouterOutlet, RouterLink, Navbar, Login, Signup, Notification],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -21,7 +22,7 @@ export class App implements OnInit {
   isNavbarShown = false;
 
   showNavbar(){
-    if(!this.navigationService.pathCorrespondsTo("Login") && !this.navigationService.pathCorrespondsTo("SingUp")){
+    if(!this.navigationService.pathCorrespondsTo("Login") && !this.navigationService.pathCorrespondsTo("SignUp")){
       this.isNavbarShown = true;
     }else{
       this.isNavbarShown = false;

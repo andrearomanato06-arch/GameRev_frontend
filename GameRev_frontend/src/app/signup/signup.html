@@ -1,0 +1,29 @@
+<div class="signUp-bg">
+  <div class="signup-container">
+
+    <img src="UserIcon.png" alt="Account icon" class="account-image">
+
+    <img src="GameRevLogoBlkBg.png" alt="GameRev logo" class="logo">
+
+    <form class="singup-form" id="login-form" (ngSubmit)="signUp()">
+      <label for="username-field" class="input-label">Username</label>
+      <input type="text" class="input-field" id="username-field" name="username" placeholder="Username" [(ngModel)]="username" required>
+
+      <label for="email-field" class="input-label">Email</label>
+      <input type="text" class="input-field" id="email-field" name="email" placeholder="Email" [(ngModel)]="email" required>
+
+      <label for="password-field" class="input-label">Password</label>
+      <input type="password" class="input-field" id="password-field" name="password" placeholder="Password"[(ngModel)]="password" required>
+
+      <label for="cnf-password-field" class="input-label">Confirm Password</label>
+      <input type="password" class="input-field" id="cnf-password-field" name="confirm" placeholder="Confirm Password" [(ngModel)]="confirm" required>
+
+      <div class="show-password-ckbx">
+        <input type="checkbox" id="show-password" (change)="showPassword()">
+        <label for="show-password">show password</label>
+      </div>
+      <input type="submit" class="sbt-button" name="SignUp" value="Sing Up">
+    </form>
+
+  </div>
+</div>

@@ -1,10 +1,11 @@
-<nav style="color: aliceblue;">
+<!-- <nav style="color: aliceblue;">
   <a routerLink="/Login">Vai a Login</a>
-  <a routerLink="/SingUp">Vai a SignUp</a>
-</nav>
+  <a routerLink="/SignUp">Vai a SignUp</a>
+</nav> -->
 @if(isNavbarShown){
   <app-navbar></app-navbar>
 }
+<app-notification></app-notification>
 <main id="main">
   <router-outlet></router-outlet>
 </main>

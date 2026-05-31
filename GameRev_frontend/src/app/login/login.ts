@@ -1,21 +1,75 @@
-import { Component } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { NavigationService } from '../services/navigation-service';
+import { FormsModule } from '@angular/forms';
+import { getUrl } from '../../global';
+import { Router } from '@angular/router';
+import { NotificationService } from '../services/notification-service';
 
 @Component({
   selector: 'app-login',
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
 export class Login {
 
+  email = "";
+  password = "";
+
+  router = inject(Router);
+  notificationService = inject(NotificationService);
+
   showPassword(){
     const showPasswordCheckbox = document.getElementById("show-password") as HTMLInputElement;
     const passwordField = document.getElementById("password-field") as HTMLInputElement;
-
-    showPasswordCheckbox.addEventListener('change', () => {
-      passwordField.type = showPasswordCheckbox.checked? 'text' : 'password';
-    });
+    passwordField.type = showPasswordCheckbox.checked? 'text' : 'password';
   }
+
+
+  checkData(){
+    //var emptyEmail = false;
+    //var emptyPassword = false;
+    var msg = ""
+    if(this.email == null || this.email == ""){
+      //emptyEmail = true;
+      msg += "Email field is required\n";
+    }
+    if(this.password == null || this.password == ""){
+      msg += "Password field is required";
+    }
+    return msg;
+  }
+
+  login(){
+    const checkDataMsg = this.checkData();
+    console.log(checkDataMsg);
+    if(checkDataMsg != ""){
+      this.notificationService.showNotification(checkDataMsg, "error");
+      return;
+    }
+    fetch(getUrl("login"), {
+      method: 'POST',
+      headers: {
+        "Content-Type":"application/json"
+      },
+      body : JSON.stringify({
+        Email: this.email,
+        Password: this.password
+      })
+    })
+    .then(response => {
+      if(response.ok){
+        this.router.navigate(["Home"]);
+      }else{
+        console.log("errore");
+        this.notificationService.showNotification("Invalid credential provided, please check","error");
+
+      }
+    }).catch(error => {
+      console.log(error);
+      this.notificationService.showNotification("An error occured, try again or later","error");
+    })
+  }
+
 
 }
