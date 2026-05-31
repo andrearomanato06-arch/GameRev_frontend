@@ -1,5 +1,6 @@
 @if(notificationService.isVisible){
   <div class="ntf-container" id="ntf-container" [ngClass]="notificationService.status()">
+    <img [src]="getIconByStatus()" alt="notification" id="ntf-image" class="ntf-image">
     <h3 class="msg">{{notificationService.message}}</h3>
     <button class="close-ntf-btn" (click)="notificationService.close()">X</button>
   </div>

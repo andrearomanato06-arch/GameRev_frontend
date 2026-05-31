@@ -1,5 +1,4 @@
-import { Component, inject, signal } from '@angular/core';
-import { NavigationService } from '../services/navigation-service';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { getUrl } from '../../global';
 import { Router } from '@angular/router';
@@ -16,6 +15,8 @@ export class Login {
   email = "";
   password = "";
 
+  errorMessage = "";
+
   router = inject(Router);
   notificationService = inject(NotificationService);
 
@@ -27,24 +28,21 @@ export class Login {
 
 
   checkData(){
-    //var emptyEmail = false;
-    //var emptyPassword = false;
-    var msg = ""
+    this.errorMessage= ""
     if(this.email == null || this.email == ""){
-      //emptyEmail = true;
-      msg += "Email field is required\n";
+      this.errorMessage += "Email field is required\n";
     }
     if(this.password == null || this.password == ""){
-      msg += "Password field is required";
+      this.errorMessage += "Password field is required";
     }
-    return msg;
+    return this.errorMessage;
   }
 
   login(){
     const checkDataMsg = this.checkData();
     console.log(checkDataMsg);
     if(checkDataMsg != ""){
-      this.notificationService.showNotification(checkDataMsg, "error");
+      this.notificationService.showNotification(checkDataMsg, "warning");
       return;
     }
     fetch(getUrl("login"), {
