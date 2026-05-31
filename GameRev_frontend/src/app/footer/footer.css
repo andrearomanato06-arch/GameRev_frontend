@@ -1,0 +1,28 @@
+.footer{
+  display: block;
+  height: 80px;
+  background-color: #39d355;
+  width: 100%;
+  margin-top: 100vh;
+}
+
+.green-line{
+  background-color: #39d355;
+  height: 5px;
+}
+
+.black-line{
+  background-color: black;
+  height: 10px;
+}
+
+.content{
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-img-logo{
+  height: 40px;
+  width: auto;
+  margin: 10px 300px;
+}

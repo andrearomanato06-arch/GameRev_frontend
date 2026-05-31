@@ -6,10 +6,11 @@ import { Signup } from './signup/signup';
 import { NavigationService } from './services/navigation-service';
 import { filter } from 'rxjs';
 import { Notification } from './notification/notification';
+import { Footer } from "./footer/footer";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, Navbar, Login, Signup, Notification],
+  imports: [RouterOutlet, RouterLink, Navbar, Login, Signup, Notification, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
